@@ -25,10 +25,10 @@ export function getBaseNameOfHumpFormat(pkgName:string, separators ?: string | s
  * 获取 package.json 中配置的指定依赖类型中的所有依赖的名字列表
  * Get a list of names for all dependencies in the specified dependency type configured in package.json
  * @param package:object  必选；package.json 中的配置对象； Configuration objects in package.json
- * @param depTypes?: string | string[]    可选；默认值：["dependencies","optionalDependencies"]；依赖类型的名字 或者 名字数组；     Optional; default: ["dependencies","optionalDependencies","peerDependencies"];
+ * @param depTypes?: string | string[]    可选；默认值：["dependencies","optionalDependencies","peerDependencies"]；依赖类型的名字 或者 名字数组；     Optional; default: ["dependencies","optionalDependencies","peerDependencies"];
  * @returns Array<string>  返回包含指定依赖类型中的所有依赖名字的数组； Returns an array of all dependent names in the specified dependency type
  */
 export function getDependencieNames(packageConf:any,depTypes?: string | string[]):string[] {
-	depTypes = depTypes ? (typeof depTypes === "string" ? [depTypes] : depTypes) : ["dependencies","optionalDependencies"];
+	depTypes = depTypes ? (typeof depTypes === "string" ? [depTypes] : depTypes) : ["dependencies","optionalDependencies","peerDependencies"];
 	return Object.keys(Object.assign({},...depTypes.map(depType=>packageConf[depType])));
 }
