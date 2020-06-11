@@ -3,9 +3,10 @@
   "version": "1.0.2",
   "description": "package-tls 提供了解析 npm 的包配置文件 package.json 的相关工具",
   "main": "dist/package-tls.cjs.js",
-  "module": "dist/package-tls.esm.js",
+  "module": "dist/package-tls.es.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
+  "homepage": "https://github.com/GuoBinyong/package-tls#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/GuoBinyong/package-tls"
@@ -34,16 +35,19 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-node-resolve": "^7.1.3",
+    "@rollup/plugin-typescript": "^4.1.2",
     "@typescript-eslint/eslint-plugin": "^3.0.0",
     "@typescript-eslint/parser": "^3.0.0",
     "eslint": "^7.0.0",
+    "package-tls": "^1.0.2",
+    "path": "^0.12.7",
     "rollup": "^2.7.2",
-    "rollup-plugin-typescript2": "^0.27.0",
+    "rollup-plugin-terser": "^6.1.0",
     "ts-node": "^8.9.1",
     "tslib": "^2.0.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "es-expand": "^1.0.16"
+    "es-expand": "^2.0.0"
   }
 }
