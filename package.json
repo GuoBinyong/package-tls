@@ -1,6 +1,6 @@
 {
   "name": "package-tls",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "package-tls 提供了解析 npm 的包配置文件 package.json 的相关工具",
   "main": "dist/package-tls.cjs.js",
   "module": "dist/package-tls.es.js",
