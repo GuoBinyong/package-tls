@@ -20,7 +20,10 @@
     "package tools",
     "解析 工具"
   ],
-  "author": "郭斌勇",
+  "author": {
+    "name": "郭斌勇",
+    "email": "guobinyong@qq.com"
+  },
   "license": "ISC",
   "files": [
     "dist/[^.]*",
