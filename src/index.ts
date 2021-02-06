@@ -43,9 +43,53 @@ export function getDependencieNames(packageConf:any,depTypes?: string | string[]
  * @param target:any    要被转成字符串的对象
  * @param space?: string | number   缩进的空格，当 target 序列化成 JSON 时，会用到这个参数作为 `JSON.stringify` 的第三个参数 space 
  */
-export function toString(target:any,space?: string | number){
+export function toString(target:any,space?: string | number | null){
 	if (typeof target === "string") return target;
 	if (target instanceof String) return target.toString();
 	if (target == null) return "";
-	return JSON.stringify(target,undefined,space);
+	return JSON.stringify(target,undefined,space as string | number);
+}
+
+
+
+
+
+/**
+ * 将标签模板字符串的标签函数的参数拼接成字符串
+ * @param space : string | number   缩进的空格，当 标签模板字符中的插值是对象时 会用到这个参数作为 `JSON.stringify` 的第三个参数 space 将插值转成 JSON 字符串
+ * @param strPieces : string[]  标签模板字符串的标签函数的第一个参数
+ * @param interpolation    包含标签模板字符串的所有插值的数组
+ */
+function stringTagWithSpace(space: string | number | undefined | null,strPieces:string[],interpolation:any[]){
+	const allStrPieces = interpolation.reduce(function(allStrs,arg,index){
+		allStrs.push(toString(arg,space),strPieces[index + 1]);
+		return allStrs;
+	},[strPieces[0]]);
+	return allStrPieces.json("");
+}
+
+
+
+ /**
+ * 生成 标签模板字符串的标签函数
+ * @param space?: string | number   可靠；将模板字符串插件对象转成 JSON 字符串的 缩进的空格
+ * 示例：
+ * toStringTag(2)`个人信息${name:"郭斌勇",email: "guobinyong@qq.com"}`
+ */
+export function toStringTag(space?: string | number): (strPieces:string[],...interpolation:any[])=>string;
+
+
+/**
+ * 标签模板字符串的标签函数
+ * 模板字符中的参数会经过 toString 方法处理
+ */
+export function toStringTag(strPieces:string[],...interpolation:any[]):string;
+export function toStringTag(strsOrSpace:string | number | undefined | null | string[],...interpolation:any[]){
+	if (Array.isArray(strsOrSpace)){
+		return stringTagWithSpace(undefined,strsOrSpace,interpolation);
+	}
+
+	return function(strPieces:string[],...interpolation:any[]){
+		return stringTagWithSpace(strsOrSpace as  string | number,strPieces,interpolation);
+	}
 }
