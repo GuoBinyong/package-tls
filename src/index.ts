@@ -40,11 +40,12 @@ export function getDependencieNames(packageConf:any,depTypes?: string | string[]
  * - 如果 target 是 null 或 undefined 返回 空字符串 ""      If target is null or undefined returns an empty string ""
  * - 否则，如果 target 是 String 对象， 返回 该对象表示的字符串       Otherwise, if the target is a String object, returns the string represented by the object
  * - 否则，如果 target 是 其它 对象类型， 返回 该对象的 JSON 字符串    Otherwise, if target is a different object type, returns the object's JSON string
- * @param target
+ * @param target:any    要被转成字符串的对象
+ * @param space?: string | number   缩进的空格，当 target 序列化成 JSON 时，会用到这个参数作为 `JSON.stringify` 的第三个参数 space 
  */
-export function toString(target:any){
+export function toString(target:any,space?: string | number){
 	if (typeof target === "string") return target;
 	if (target instanceof String) return target.toString();
 	if (target == null) return "";
-	return JSON.stringify(target);
+	return JSON.stringify(target,undefined,space);
 }
