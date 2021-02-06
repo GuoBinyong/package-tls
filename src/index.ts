@@ -64,8 +64,8 @@ function stringTagWithSpace(space: string | number | undefined | null,strPieces:
 	const allStrPieces = interpolation.reduce(function(allStrs,arg,index){
 		allStrs.push(toString(arg,space),strPieces[index + 1]);
 		return allStrs;
-	},[strPieces[0]]);
-	return allStrPieces.json("");
+	},[strPieces[0]]);[]
+	return allStrPieces.join("");
 }
 
 
