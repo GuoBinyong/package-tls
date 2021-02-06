@@ -32,3 +32,19 @@ export function getDependencieNames(packageConf:any,depTypes?: string | string[]
 	depTypes = depTypes ? (typeof depTypes === "string" ? [depTypes] : depTypes) : ["dependencies","optionalDependencies","peerDependencies"];
 	return Object.keys(Object.assign({},...depTypes.map(depType=>packageConf[depType])));
 }
+
+
+
+/**
+ * 将 target 转成字符串类型    Turn target into a string type
+ * - 如果 target 是 null 或 undefined 返回 空字符串 ""      If target is null or undefined returns an empty string ""
+ * - 否则，如果 target 是 String 对象， 返回 该对象表示的字符串       Otherwise, if the target is a String object, returns the string represented by the object
+ * - 否则，如果 target 是 其它 对象类型， 返回 该对象的 JSON 字符串    Otherwise, if target is a different object type, returns the object's JSON string
+ * @param target
+ */
+export function toString(target:any){
+	if (typeof target === "string") return target;
+	if (target instanceof String) return target.toString();
+	if (target == null) return "";
+	return JSON.stringify(target);
+}
