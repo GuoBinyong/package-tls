@@ -1,22 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ESNext",
     "module": "ESNext",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext",
-      "ScriptHost"
-    ],
+    "lib": ["ESNext", "DOM"],
     "declaration": true,
-    "downlevelIteration": true,
     "strict": true,
+    "resolveJsonModule": true,
     "moduleResolution": "node",
-    "resolveJsonModule":true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "useDefineForClassFields": true,
+    "noImplicitOverride":true,
   },
-  "exclude": [
-    "dist",
-    "dev"
-  ]
+  "include": ["src"]
 }
