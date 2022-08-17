@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [package-tls](./package-tls.md) |  |
+|  [package-tls](./package-tls.md) | package-tls 提供了解析 npm 的包配置文件 package.json 的相关工具 |
 

@@ -23,6 +23,4 @@ export function toStringTag(space?: string | number): (strPieces: string[], ...i
 // @public
 export function toStringTag(strPieces: string[], ...interpolation: any[]): string;
 
-// (No @packageDocumentation comment for this package)
-
 ```
