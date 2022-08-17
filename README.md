@@ -29,7 +29,6 @@ package-tls 提供了解析 npm 的包配置文件 package.json 的相关工具
 - 主页：<https://github.com/GuoBinyong/package-tls>
 - [GitHub仓库][]
 - [码云仓库][]
-- [教程][]
 - [API接口文档][]
 
 
