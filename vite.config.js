@@ -34,7 +34,7 @@ const singleDts = false;   // 是否要将声明汇总成一个单独的文件
 
 
 // 自动配置
-const pkgName = "PackageTls"; //getBaseNameOfHumpFormat(pkg.name);  //驼峰格式的 pkg.name
+const pkgName = getBaseNameOfHumpFormat(pkg.name);  //驼峰格式的 pkg.name
 const srcDir = dirname(entry);   //源代码根目录
 const outDir = pkg.main ? dirname(pkg.main || pkg.module) : "dist";    //输出目录
 const dtsFile =  pkg.types || pkg.typings;  //类型声明文件的路径
