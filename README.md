@@ -1,4 +1,4 @@
-[API接口文档]: ./doc/index.md
+[API接口文档]: ./doc/api/index.md
 
 [GitHub仓库]: https://github.com/GuoBinyong/package-tls
 [发行地址]: https://github.com/GuoBinyong/package-tls/releases
@@ -36,7 +36,6 @@ package-tls 提供了解析 npm 的包配置文件 package.json 的相关工具
 - 给该仓库提交 [issues][]
 - 给我 Pull requests
 - 邮箱：<guobinyong@qq.com>
-- QQ：guobinyong@qq.com
 - 微信：keyanzhe
 
 
@@ -48,18 +47,18 @@ package-tls 提供了解析 npm 的包配置文件 package.json 的相关工具
 
 
 ## 3.1. 方式1：通过 npm 安装
-```
+```shell
 npm install package-tls -D
 ```
 
 ## 3.2. 方式2：通过 pnpm 安装
-```
+```shell
 pnpm add package-tls -D
 ```
 
 
 ## 3.3. 方式3：通过 yarn 安装
-```
+```shell
 yarn add package-tls -D
 ```
 
